@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+
+:root {
+  --body-color: #f9fafc;
+  --accent: #167d7f;
+  --dark-gray: #747d8c;
+  --light-gray: #828fa2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  background-color: var(--body-color);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: magenta; */
+  min-height: 100vh;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.slider-container {
+  /* background-color: yellow; */
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.person-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  transition: all linear 0.3s;
+}
+
+.person-article.is-active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.person-article.is-next {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.person-article.is-last {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.person-img {
+  height: 150px;
+  object-fit: cover;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+}
+
+.person-name {
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.title {
+  margin-top: 0.4em;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 0.4em;
+  color: black;
+}
+
+.quote {
+  color: var(--dark-gray);
+  margin-bottom: 2em;
+}
+
+.icon-quote {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.prev-btn,
+.next-btn {
+  background-color: var(--dark-gray);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 170px;
+  cursor: pointer;
+}
+
+.next-icon,
+.prev-icon {
+  font-size: 1.1rem;
+}
+
+.next-btn {
+  right: 0;
+}
