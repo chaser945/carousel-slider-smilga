@@ -19,6 +19,16 @@ const App = () => {
     }
   }, [people, indexValue])
 
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setIndexValue(indexValue + 1)
+    }, 5000)
+
+    return () => {
+      clearInterval(autoSlide)
+    }
+  }, [indexValue])
+
   return (
     <main>
       <section className="slider-container">
